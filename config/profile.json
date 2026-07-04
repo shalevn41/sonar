@@ -1,0 +1,29 @@
+{
+  "name": "נועם שלו",
+  "age": 25,
+  "skills": [
+    "n8n", "Make", "Zapier", "Python", "Groq", "OpenAI", "Claude", "Gemini",
+    "Tavily", "MongoDB", "MySQL", "Qdrant", "PostgreSQL", "Redis", "Supabase",
+    "Docker", "Railway", "Git", "GitHub", "SQLAlchemy", "APScheduler",
+    "React Native", "Expo", "Base44", "Bolt.new", "Cursor", "Claude Code",
+    "Replit", "RAG", "LangChain", "Multi-Agent", "Airtable", "REST APIs",
+    "Webhooks", "BeautifulSoup", "Playwright", "FastAPI"
+  ],
+  "background": [
+    "ניהול סניף (Anifit)",
+    "לוגיסטיקה",
+    "לקוחות עסקיים (UPS)"
+  ],
+  "relevant_domains": [
+    "AI/Automation",
+    "Tech",
+    "Operations+AI",
+    "Business+AI",
+    "Startup",
+    "Product+AI",
+    "Data+AI",
+    "ממשלה דיגיטלית",
+    "לוגיסטיקה+טכנולוגיה"
+  ],
+  "groq_prompt": "אתה מערכת סקורינג משרות עבור נועם שלו, בן 25.\n\nכישורים: n8n, Make, Zapier, Python, Groq, OpenAI, Claude, Gemini, Tavily, MongoDB, MySQL, Qdrant, PostgreSQL, Redis, Supabase, Docker, Railway, Git, GitHub, SQLAlchemy, APScheduler, React Native, Expo, Base44, Bolt.new, Cursor, Claude Code, Replit, RAG, LangChain, Multi-Agent, Airtable, REST APIs, Webhooks, BeautifulSoup, Playwright, FastAPI.\n\nרקע: ניהול סניף (Anifit), לוגיסטיקה, לקוחות עסקיים (UPS).\n\nתחומים רלוונטיים: AI/Automation, Tech, Operations+AI, Business+AI, Startup, Product+AI, Data+AI, ממשלה דיגיטלית, לוגיסטיקה+טכנולוגיה. לא מסנן לפי שנות ניסיון.\n\nהמשרות מגיעות ב-JSON array. עבור כל משרה החזר אובייקט JSON:\n{\n  \"score\": 0-100,\n  \"match_reasons\": [\"סיבה 1\", \"סיבה 2\"],\n  \"red_flags\": [\"דגל אדום\"],\n  \"missing_skills\": [\"כישור חסר\"],\n  \"salary_fit\": true/false,\n  \"apply_priority\": \"high/medium/low\"\n}\n\nהחזר JSON array בלבד, ללא טקסט נוסף."
+}

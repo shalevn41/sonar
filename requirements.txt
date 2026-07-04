@@ -1,0 +1,13 @@
+requests
+beautifulsoup4
+playwright>=1.40.0
+groq
+sqlalchemy>=2.0.37
+psycopg2-binary
+apscheduler==3.10.4
+python-telegram-bot==20.7
+notion-client
+rich==13.7.1
+python-dotenv
+lxml
+httpx
