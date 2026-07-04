@@ -480,7 +480,35 @@ GROQ_SCORE_THRESHOLD=80
 
 ## 19. Current Status
 
-**Phase A:** Not started — ready to begin from Step 0.
+**Phase A:** In progress — Steps 0–8 complete, Step 9 (Railway deploy) pending.
 **Phase B:** Planned, not started.
+
+### Session 1 — 2026-07-04 — Completed:
+- ✅ Step 0: Project skeleton, config files, requirements, .gitignore
+- ✅ Step 1: PostgreSQL + SQLAlchemy models (jobs, scan_log, rejected_companies)
+- ✅ Step 2: base_scraper.py + Drushim (98 jobs/run), GotFriends, JobMaster, Jobnet
+- ✅ Step 3: Groq AI scorer — Track 1 keywords + Track 2 batch (model: openai/gpt-oss-120b)
+- ✅ Step 4: Telegram alerts — immediate (top 5) + morning summary + stale site
+- ✅ Step 5: APScheduler — startup scan + 09:00/09:30/13:00/17:00/00:00/03:00
+- ✅ Step 6: AllJobs (Playwright skeleton), Dialog (Playwright skeleton)
+- ✅ Step 7: Indeed + Glassdoor Playwright scrapers (skeleton)
+- ✅ Step 8: Rich CLI (scan/list/top/stats) + Notion backup
+- ✅ GitHub: pushed to https://github.com/shalevn41/sonar
+
+### Still needed:
+- ⬜ AllJobs — Playwright interaction not working yet (JS anti-bot)
+- ⬜ Dialog — Playwright scraper not tested with real results
+- ⬜ Jobs.il — domain dead, removed from runner
+- ⬜ Indeed / Glassdoor — may be blocked by anti-bot
+- ⬜ Step 9: Deploy to Railway
+- ⬜ Notion API key + DB ID — not configured yet
+- ⬜ Keyword tuning — Track 1 too broad (IT/Help Desk matching)
+
+### Environment notes:
+- Python 3.14 on macOS M4 — greenlet pre-built wheel required
+- SQLAlchemy >= 2.0.37 required for Python 3.14
+- Playwright latest (1.61) — NOT pinned to 1.40 (no py3.14 wheel)
+- PostgreSQL 15 via Homebrew, running as local service
+- DATABASE_URL: postgresql://noammacbookpc@localhost:5432/sonar
 
 > Update this section at the end of every session with what was completed.
