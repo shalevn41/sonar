@@ -14,13 +14,6 @@ def job_full_scan():
     run_scan()
 
 
-def job_playwright_scan():
-    logger.info("[scheduler] Running Playwright scan (Indeed + Glassdoor)...")
-    from src.scraper.runner import run_scan
-    run_scan(site="indeed")
-    run_scan(site="glassdoor")
-
-
 def job_morning_summary():
     logger.info("[scheduler] Sending morning summary...")
     from src.database.db import SessionLocal
@@ -95,7 +88,6 @@ def start_scheduler():
 
     scheduler.add_job(job_full_scan, CronTrigger(hour=9, minute=0), id="scan_0900")
     scheduler.add_job(job_morning_summary, CronTrigger(hour=9, minute=0), id="morning_summary")
-    scheduler.add_job(job_playwright_scan, CronTrigger(hour=9, minute=30), id="scan_playwright")
     scheduler.add_job(job_full_scan, CronTrigger(hour=13, minute=0), id="scan_1300")
     scheduler.add_job(job_full_scan, CronTrigger(hour=17, minute=0), id="scan_1700")
     scheduler.add_job(job_notion_backup, CronTrigger(hour=0, minute=0), id="notion_backup")

@@ -11,20 +11,14 @@ SCORE_THRESHOLD = 80
 
 
 def _get_scrapers(site: str | None = None) -> list[BaseScraper]:
-    from src.scraper.alljobs import AllJobsScraper
     from src.scraper.drushim import DrushimScraper
     from src.scraper.gotfriends import GotFriendsScraper
     from src.scraper.jobmaster import JobMasterScraper
-    from src.scraper.dialog import DialogScraper
-    from src.scraper.jobnet import JobnetScraper
 
     all_scrapers = {
-        "alljobs": AllJobsScraper,
         "drushim": DrushimScraper,
         "gotfriends": GotFriendsScraper,
         "jobmaster": JobMasterScraper,
-        "dialog": DialogScraper,
-        "jobnet": JobnetScraper,
     }
 
     if site:

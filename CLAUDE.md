@@ -260,9 +260,8 @@ sonar/
 
 | Time | Action |
 |---|---|
-| Startup | Initial scan (all 7 BS4 sites) |
+| Startup | Initial scan (all active sites) |
 | 09:00 | Full scan + morning summary Telegram |
-| 09:30 | Indeed + Glassdoor (Playwright, separate) |
 | 13:00 | Full scan |
 | 17:00 | Final daily scan |
 | 00:00 | Notion backup |
@@ -495,14 +494,34 @@ GROQ_SCORE_THRESHOLD=80
 - ✅ Step 8: Rich CLI (scan/list/top/stats) + Notion backup
 - ✅ GitHub: pushed to https://github.com/shalevn41/sonar
 
+### Session 2 — 2026-07-04 — Completed:
+- ✅ Site audit: tested all 9 sites for anti-bot and availability
+- ✅ Jobnet: removed from runner (search is JS-only, always returns same 15 wrong jobs)
+- ✅ Indeed/Glassdoor: confirmed blocked (RSS 403, login wall) — removed from runner and scheduler
+- ✅ Dialog: confirmed blocked by Imperva server-side captcha (even plain requests blocked)
+- ✅ AllJobs: identified localStorage-based search mechanism, multiple fix attempts in progress
+- ✅ Scheduler: removed 09:30 Playwright-only run (no longer needed)
+- ✅ Active scraper list: Drushim, GotFriends, JobMaster, AllJobs (WIP), Dialog (captcha-blocked)
+
 ### Still needed:
-- ⬜ AllJobs — Playwright interaction not working yet (JS anti-bot)
-- ⬜ Dialog — Playwright scraper not tested with real results
-- ⬜ Jobs.il — domain dead, removed from runner
-- ⬜ Indeed / Glassdoor — may be blocked by anti-bot
+- ⬜ AllJobs — localStorage + form interaction fix in progress (may remain blocked)
+- ⬜ Dialog — Imperva captcha blocks all access (server-side), needs proxy or manual cookie
 - ⬜ Step 9: Deploy to Railway
 - ⬜ Notion API key + DB ID — not configured yet
 - ⬜ Keyword tuning — Track 1 too broad (IT/Help Desk matching)
+
+### Site status summary:
+| Site | Status | Notes |
+|---|---|---|
+| Drushim | ✅ Working | 98 jobs/run, best source |
+| JobMaster | ✅ Working | 70 jobs/run |
+| GotFriends | ✅ Working | 8 jobs/run |
+| AllJobs | ⚠️ In progress | localStorage search, anti-bot |
+| Dialog | ❌ Blocked | Imperva captcha, server-side |
+| Indeed | ❌ Blocked | RSS 403, Playwright blocked |
+| Glassdoor | ❌ Blocked | Login wall |
+| Jobnet | ❌ Removed | JS-only search |
+| Jobs.il | ❌ Dead | Domain offline |
 
 ### Environment notes:
 - Python 3.14 on macOS M4 — greenlet pre-built wheel required
